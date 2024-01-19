@@ -2,7 +2,7 @@ import cv2
 import time
 import poseModule as pm
 
-cap = cv2.VideoCapture('1.mp4')
+cap = cv2.VideoCapture('../videos/1.mp4')
 pTime = 0
 detector = pm.poseDetector()
 while True:
