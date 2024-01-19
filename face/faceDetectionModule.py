@@ -24,7 +24,7 @@ while True:
             bbox = int(bboxc.xmin * iw), int(bboxc.ymin * ih), \
                    int(bboxc.width * iw), int(bboxc.height * ih)
             cv2.rectangle(img, bbox, (255, 0, 255), 2)
-            cv2.putText(img, f'{int(detection.score[0] * 100)}%',
+            cv2.putText(img, f'{int(detection.score[0] * 100)}% alkolikos ',
                         (bbox[0], bbox[1] - 20), cv2.FONT_HERSHEY_PLAIN,
                         2, (255, 0, 255), 2)
 
@@ -36,3 +36,11 @@ while True:
                     3,(0,255,0),2)
     cv2.imshow("Image",img)
     cv2.waitKey(18)
+
+def main():
+    cap = cv2.VideoCapture("../videos/2.mp4")
+    pTime = 0
+
+
+if __name__ == "__main__":
+    main()
