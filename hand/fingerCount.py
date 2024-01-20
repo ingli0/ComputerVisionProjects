@@ -38,7 +38,7 @@ while True:
         fingers= []
 
         #thumb
-        if lmList[tipIds[0]][1] < lmList[tipIds[0] - 1][1]:
+        if lmList[tipIds[0]][1] <lmList[tipIds[0] - 1][1]:
             fingers.append(1)
         else:
             fingers.append(0)
@@ -56,6 +56,10 @@ while True:
 
         overlayList_resized = [cv2.resize(overlay, (200, 200)) for overlay in overlayList]
         img[0:200, 0:200] = overlayList_resized[totalFingers-1]
+
+        cv2.rectangle(img,(20,225),(170,425),(0,255,0),cv2.FILLED)
+        cv2.putText(img,str(totalFingers),(45,375),cv2.FONT_HERSHEY_PLAIN,
+                    10,(255,0,0),25)
 
 
     cTime = time.time()
