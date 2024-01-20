@@ -2,13 +2,20 @@ import cv2
 import mediapipe as mp
 import time
 
+
+wCam,hCam = 1280 ,720
+
 cap = cv2.VideoCapture(0)
+cap.set(3, wCam)
+cap.set(4, hCam)
+pTime=0
+
 
 mpHands = mp.solutions.hands
 hands = mpHands.Hands()
 mpDraw = mp.solutions.drawing_utils
 
-pTime =0
+
 cTime = 0
 
 while True:
