@@ -39,3 +39,8 @@ Ensure you have the following dependencies installed:
    ```bash
    pip install -r requirements.txt 
 
+3. **Run the desired module:**
+   ```bash
+   fingerCount.py
+   mouseVirtual.py
+   VolumeHandControl.py
