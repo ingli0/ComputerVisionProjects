@@ -3,6 +3,7 @@ import numpy as np
 import time
 import handTrackingModule as htm
 import autopy
+wScr , hScr = autopy.screen.size()
 
 ######################
 wCam, hCam = 640,480
@@ -27,8 +28,14 @@ while True:
         #print(x1,y1,x2,y2)
 
         fingers = detector.fingersUp()
-        print(fingers)
+        #print(fingers)
 
+        if fingers[1]==1 and fingers[2]==0:
+
+            x3 =np.interp(x1,(0,wCam),(0,wScr))
+            y3 =np.interp(y1,(0,hCam),(0,hScr))
+
+            autopy.mouse.move(wScr-x3, y3)
 
     cTime=time.time()
     fps = 1/(cTime-pTime)
