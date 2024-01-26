@@ -35,19 +35,28 @@ while True:
 
 
     if len(lmList)!=0:
-        fingers= []
+        fingers = detector.fingersUp()
 
         #thumb
-        if lmList[tipIds[0]][1] <lmList[tipIds[0] - 1][1]:
-            fingers.append(1)
+        if tipIds[0] < len(lmList) and tipIds[0] - 1 < len(lmList):
+            if lmList[tipIds[0]][1] < lmList[tipIds[0] - 1][1]:
+                fingers.append(1)
+            else:
+                fingers.append(0)
         else:
+
             fingers.append(0)
 
         #4 fingers
-        for id in range(1,5):
-            if lmList[tipIds[id]][2] < lmList[tipIds[id]-2][2]:
-                fingers.append(1)
+
+        for id in range(1, 5):
+            if tipIds[id] < len(lmList) and tipIds[id] - 2 < len(lmList):
+                if lmList[tipIds[id]][2] < lmList[tipIds[id] - 2][2]:
+                    fingers.append(1)
+                else:
+                    fingers.append(0)
             else:
+
                 fingers.append(0)
 
         #print(fingers)
