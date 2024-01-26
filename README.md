@@ -13,11 +13,11 @@ Hand holder has inside Python project that utilizes computer vision to interact 
 
 ## Features
 
-- **Finger Counting:** The `fingerCount` module utilizes computer vision to count the number of fingers raised, providing an intuitive way to input numerical values or trigger actions.
+- **Finger Counting:** The `fingerCount` module utilizes computer vision to count the number of fingers raised.
 
-- **Volume Control:** With `volumeHandcontrol.py`, users can adjust the system volume by making specific hand gestures. This feature adds a hands-free dimension to volume control.
+- **Volume Control:** With `volumeHandcontrol.py`, users can adjust the system volume by making specific hand gestures.
 
-- **Virtual Mouse:** The `mouseVirtual.py` module allows users to control the mouse cursor by moving their hand, providing an alternative input method.
+- **Virtual Mouse:** The `mouseVirtual.py` module allows users to control the mouse cursor by moving their hand.
 
 ## Prerequisites
 
