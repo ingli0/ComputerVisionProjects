@@ -47,13 +47,30 @@ while True:
             cv2.circle(img,(x1,y1),15,(255,0,255),cv2.FILLED)
             plocX,ploY = cloX,cloY
 
-        if fingers[1] == 1 and fingers[2] == 1:
+        if fingers[1] == 1 and fingers[2] == 1 and fingers[3]==0:
             length,img ,lineinfo = detector.findDistance(8,12,img)
             print(length)
             if length <45:
                 cv2.circle(img, (lineinfo[4], lineinfo[5]),
                            15, (0, 255,0), cv2.FILLED)
                 autopy.mouse.click()
+                time.sleep(0.4)
+                print(fingers)
+
+        if fingers[1] == 1 and fingers[2] == 1 and fingers[3]==1:
+            length, img, lineinfo = detector.findDistance(8, 12, img)
+            print(length)
+            if length < 45:
+                cv2.circle(img, (lineinfo[4], lineinfo[5]),
+                           15, (0, 255, 0), cv2.FILLED)
+                autopy.mouse.click()
+                autopy.mouse.click()
+                time.sleep(0.4)
+
+
+
+
+
 
 
     cTime=time.time()
