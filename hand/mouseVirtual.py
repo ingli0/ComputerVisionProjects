@@ -74,7 +74,7 @@ while True:
                 cv2.circle(img, (lineinfo[4], lineinfo[5]),
                            15, (0, 255, 0), cv2.FILLED)
                 autopy.mouse.click(autopy.mouse.Button.RIGHT)
-                time.sle
+                time.sleep(0.75)
 
 
 
