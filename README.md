@@ -34,6 +34,7 @@ Ensure you have the following dependencies installed:
 - autopy
 - comtypes
 - pycaw
+- pyautogui
 
 ## Getting Started
 
