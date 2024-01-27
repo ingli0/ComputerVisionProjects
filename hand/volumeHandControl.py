@@ -19,7 +19,6 @@ pTime=0
 detector = htm.handDetector(detectionCon=0.7)
 
 
-
 devices = AudioUtilities.GetSpeakers()
 interface = devices.Activate(
     IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
@@ -36,8 +35,8 @@ volPer = 0
 while True:
 
     success,img = cap.read()
-    img = detector.findHands(img)
-    lmList = detector.findPosition(img,draw=False)
+    img = detector.findHands2(img)
+    lmList = detector.findPosition2(img,draw=False)
     if len(lmList) !=0:
         #print(lmList[4],lmList[8])
 
@@ -76,9 +75,6 @@ while True:
                 1,(0,255,0),3)
 
 
-
-
-
     cTime = time.time()
     fps = 1/(cTime-pTime)
     pTime = cTime
@@ -88,5 +84,4 @@ while True:
 
     cv2.imshow("Img",img)
     cv2.waitKey(1)
-
 
