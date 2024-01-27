@@ -1,3 +1,5 @@
 cv2
 autopy
 numpy
+pycaw
+comtypes
