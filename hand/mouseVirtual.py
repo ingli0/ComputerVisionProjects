@@ -3,6 +3,8 @@ import numpy as np
 import time
 import handTrackingModule as htm
 import autopy
+import pyautogui, sys
+
 wScr , hScr = autopy.screen.size()
 
 ######################
@@ -75,6 +77,19 @@ while True:
                            15, (0, 255, 0), cv2.FILLED)
                 autopy.mouse.click(autopy.mouse.Button.RIGHT)
                 time.sleep(0.75)
+
+        if fingers[0] == 0 and fingers[1] == 0 and fingers[2]==0 and fingers[3]==0 and fingers[4]==0:
+            length, img, lineinfo = detector.findDistance(8, 12, img)
+            print(fingers)
+            print(length)
+            pyautogui.scroll(-20)
+
+        if fingers[0] == 1 and fingers[1] == 0 and fingers[2]==0 and fingers[3]==0 and fingers[4]==0:
+            length, img, lineinfo = detector.findDistance(8, 12, img)
+            print(fingers)
+            print(length)
+            pyautogui.scroll(20)
+
 
 
 
