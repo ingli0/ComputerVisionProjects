@@ -1,5 +1,6 @@
 import speech_recognition as sr
 import autopy
+import pyautogui
 
 def listen_and_type():
     recognizer = sr.Recognizer()
@@ -36,3 +37,12 @@ while True:
         text_to_type = command.replace("γράψε", "").strip()  # Extract text after "γράψε"
         if text_to_type:
             type_text(text_to_type)
+
+    if command and ("μουσική σταμάτα" or "μουσική παίξε" ) in command:
+        pyautogui.hotkey('playpause')
+
+    if command and "παίξε επόμενο τραγούδι" in command:
+        pyautogui.hotkey('nexttrack')
+
+    if command and "παίξε προηγούμενο τραγούδι" in command:
+        pyautogui.hotkey('prevtrack')
