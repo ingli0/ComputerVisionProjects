@@ -5,6 +5,7 @@ import handTrackingModule as htm
 import autopy
 import pyautogui, sys
 
+
 wScr , hScr = autopy.screen.size()
 
 ######################
@@ -36,19 +37,20 @@ while True:
         #print(fingers)
         cv2.rectangle(img, (frameR, frameR), (wCam - frameR, hCam - frameR),
                       (255, 0, 255), 2)
+
+
+        #mouse move
         if fingers[1]==1 and fingers[2]==0:
-
-
             x3 =np.interp(x1,(frameR,wCam-frameR),(0,wScr))
             y3 =np.interp(y1,(frameR,hCam-frameR),(0,hScr))
             cloX = cloX + (x3-plocX)/smoothening
             cloY = cloY + (y3-ploY)/smoothening
 
-
             autopy.mouse.move(wScr-cloX, cloY)
             cv2.circle(img,(x1,y1),15,(255,0,255),cv2.FILLED)
             plocX,ploY = cloX,cloY
 
+        #mouse left click
         if fingers[1] == 1 and fingers[2] == 1 and fingers[3]==0:
             length,img ,lineinfo = detector.findDistance(8,12,img)
             print(length)
@@ -59,7 +61,8 @@ while True:
                 time.sleep(0.4)
                 print(fingers)
 
-        if fingers[1] == 1 and fingers[2] == 1 and fingers[3]==1:
+        #mouse double click
+        if fingers[0]==0 and fingers[1] == 1 and fingers[2] == 1 and fingers[3]==1 and fingers[4]==0:
             length, img, lineinfo = detector.findDistance(8, 12, img)
             print(length)
             if length < 45:
@@ -69,7 +72,8 @@ while True:
                 autopy.mouse.click()
                 time.sleep(0.4)
 
-        if fingers[0] == 1  and fingers[4]==1:
+        #mouse right click
+        if fingers[0] == 1 and fingers[1]==0 and fingers[2]==0 and fingers[3]==0 and fingers[4]==1:
             length, img, lineinfo = detector.findDistance(8, 12, img)
             print(length)
             if length < 45:
@@ -78,22 +82,19 @@ while True:
                 autopy.mouse.click(autopy.mouse.Button.RIGHT)
                 time.sleep(0.75)
 
+        #scroll down
         if fingers[0] == 0 and fingers[1] == 0 and fingers[2]==0 and fingers[3]==0 and fingers[4]==0:
             length, img, lineinfo = detector.findDistance(8, 12, img)
             print(fingers)
             print(length)
             pyautogui.scroll(-20)
 
+        #scroll up
         if fingers[0] == 1 and fingers[1] == 0 and fingers[2]==0 and fingers[3]==0 and fingers[4]==0:
             length, img, lineinfo = detector.findDistance(8, 12, img)
             print(fingers)
             print(length)
             pyautogui.scroll(20)
-
-
-
-
-
 
     cTime=time.time()
     fps = 1/(cTime-pTime)
