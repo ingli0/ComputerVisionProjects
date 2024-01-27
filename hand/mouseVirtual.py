@@ -67,7 +67,14 @@ while True:
                 autopy.mouse.click()
                 time.sleep(0.4)
 
-
+        if fingers[0] == 1  and fingers[4]==1:
+            length, img, lineinfo = detector.findDistance(8, 12, img)
+            print(length)
+            if length < 45:
+                cv2.circle(img, (lineinfo[4], lineinfo[5]),
+                           15, (0, 255, 0), cv2.FILLED)
+                autopy.mouse.click(autopy.mouse.Button.RIGHT)
+                time.sle
 
 
 
