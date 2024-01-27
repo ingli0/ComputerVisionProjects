@@ -3,3 +3,4 @@ autopy
 numpy
 pycaw
 comtypes
+pyautogui
