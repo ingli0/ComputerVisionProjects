@@ -27,6 +27,8 @@ Ensure you have the following dependencies installed:
 - OpenCV
 - mediapipe
 - autopy
+- comtypes
+- pycaw
 
 ## Getting Started
 
