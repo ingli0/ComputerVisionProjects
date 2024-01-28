@@ -5,14 +5,17 @@
 
 Hand holder has inside Python project that utilizes computer vision to interact with your computer using hand gestures. The project consists of three main components:
 
-1. **fingerCount.py**: Determines the number of raised fingers using computer vision.
+1.**mouseVirtual.py**: Enables users to control the mouse cursor using hand movements.
+![image](https://github.com/ingli0/ComputerVisionProjects/assets/76855285/79ab956c-d928-48a3-a3aa-0d3a0f781b9a)
+  
+  
+2. **fingerCount.py**: Determines the number of raised fingers using computer vision.
 ![image](https://github.com/ingli0/ComputerVisionProjects/assets/76855285/40c80a8a-33f8-4a6e-bfdd-46b193dd02d6)
 
-2. **volumeHandcontrol.py**: Allows users to control system volume using hand gestures.
+3. **volumeHandcontrol.py**: Allows users to control system volume using hand gestures.
 ![image](https://github.com/ingli0/ComputerVisionProjects/assets/76855285/f64a5c25-e28d-4b92-a103-8fa6f1d844c5)
 
-3. **mouseVirtual.py**: Enables users to control the mouse cursor using hand movements.
-![image](https://github.com/ingli0/ComputerVisionProjects/assets/76855285/79ab956c-d928-48a3-a3aa-0d3a0f781b9a)
+ 
 
 
 
