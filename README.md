@@ -7,6 +7,22 @@ Hand holder has inside Python project that utilizes computer vision to interact 
 
 1.**mouseVirtual.py**: Enables users to control the mouse cursor using hand movements.
 ![image](https://github.com/ingli0/ComputerVisionProjects/assets/76855285/79ab956c-d928-48a3-a3aa-0d3a0f781b9a)
+
+**Guide**
+index up:
+you use the mouse via camera 
+
+index and middle up:
+it press left click
+
+index and middle and ring up:
+it press double left click 
+
+thumb and pinkie :
+it scrolls up 
+
+fist:
+it scrolls down 
   
   
 2. **fingerCount.py**: Determines the number of raised fingers using computer vision.
